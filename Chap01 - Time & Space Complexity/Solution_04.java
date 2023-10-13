@@ -8,32 +8,40 @@ public class Solution_04 {
 
     public static void main(String[] args) {
 
-        int  n ;
+        int n;
+        
 
-        boolean [] even = new boolean[101];
+        boolean[] even = new boolean[101];
 
-        for (int i = 0 ; i < 101; i ++) {
+        for (int i = 0; i < 101; i++) {
 
-            even[i] = true ;
+            even[i] = true;
         }
 
-        for (int i = 1 ; i < 101; i = i + 2 ) {
 
-            even[i] = false ;
+
+        for (int i = 1; i < 101; i = i + 2) {
+
+            even[i] = false;
         }
 
-        n = scanner.nextInt() ;
+
+
+        n = scanner.nextInt();
 
         scanner.close();
 
-       if (even[n]) {
 
-           System.out.println(n + " is even number.");
 
-       } else {
 
-           System.out.println(n + " is odd number.");
-       }
+        if (even[n]) {
+
+            System.out.println(n + " is even number.");
+
+        } else {
+
+            System.out.println(n + " is odd number.");
+        }
 
     }
 }
