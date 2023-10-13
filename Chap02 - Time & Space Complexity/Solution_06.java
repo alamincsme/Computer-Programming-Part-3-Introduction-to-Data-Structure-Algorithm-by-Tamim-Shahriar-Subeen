@@ -3,6 +3,7 @@ package data_structure_and_algorithm;
 import java.util.Scanner;
 
 public class Solution_06 {
+    
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
