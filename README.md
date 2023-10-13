@@ -1,4 +1,5 @@
 ## Computer Programming Part 3 Introduction to Data Structure Algorithm by Tamim Shahriar Subeen
 ### [Computer-Programming-Part-3-Introduction-to-Data-Structure-Algorithm-by-Tamim-Shahriar-Subeen](https://www.rokomari.com/book/157644/computer-programming-3rd-part-data-structure-o-algorithm-porichiti) by [Tamim Shahriar Subeen (তামিম শাহরিয়ার সুবিন)](https://www.facebook.com/tamim.shahriar.subeen/) published by দ্বিমিক প্রকাশনী (Dimik Publication). All examples and practice problems in Java
 
-![Computer Programming Part 3 Introduction to Data Structure Algorithm by Tamim Shahriar Subeen](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rokomari.com%2Fbook%2F119934%2Fcomputer-programming-2nd-part&psig=AOvVaw3HTlQmY14pfJqeO0zVjrfQ&ust=1697294310355000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOic7JOg84EDFQAAAAAdAAAAABAH)
+![Computer Programming Part 3 Introduction to Data Structure Algorithm by Tamim Shahriar Subeen](![image](https://github.com/alamincsme/Computer-Programming-Part-3-Introduction-to-Data-Structure-Algorithm-by-Tamim-Shahriar-Subeen/assets/147558937/34b3c251-bdd2-41d8-bef9-ea13f2e65db8)
+)
