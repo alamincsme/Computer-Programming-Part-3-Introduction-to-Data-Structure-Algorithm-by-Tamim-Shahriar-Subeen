@@ -19,11 +19,11 @@ public class BinarySearchTree {
      }
 
      public void insert(int item) {
-         root = inserRec(root , item);
+         root = insertRec(root , item);
 
      }
 
-    private Node inserRec(Node root, int item) {
+    private Node insertRec(Node root, int item) {
          if (root == null) {
              return new Node(item);
          }
