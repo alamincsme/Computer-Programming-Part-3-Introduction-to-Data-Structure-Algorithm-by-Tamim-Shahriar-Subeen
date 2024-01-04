@@ -14,7 +14,7 @@ public void insertionSort() {
             current.next = sorted;
             sorted = current;
         } else {
-            // Search for the correct position in the sorted list
+           
             LL.Node temp = sorted;
             while (temp.next != null && current.data > temp.next.data) {
                 temp = temp.next;
