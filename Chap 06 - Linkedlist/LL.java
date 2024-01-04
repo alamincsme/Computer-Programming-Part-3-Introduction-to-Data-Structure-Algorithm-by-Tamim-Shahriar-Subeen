@@ -1,34 +1,38 @@
-public class LL {
+package data_structure_and_algorithm;
 
-   private Node head;
+public class LL {
+    private Node head ;
 
     public class Node {
-        private int data;
-        private Node next;
+        int data;
+        Node next;
 
-
-        public   Node (int item) {
+        public Node (int item) {
             this.data = item;
             this.next = null;
         }
     }
 
+
     public void prepend(int item) {
-        Node node = new Node(item) ;
+        Node node = new Node(item);
 
         if (head == null) {
             head = node;
         } else {
             node.next = head;
-            head = node;
+            head = node ;
         }
     }
+
     public void append(int item) {
         Node node = new Node(item);
+
         if (head == null) {
             head = node;
         } else {
             Node current_node = head;
+
             while (current_node.next != null) {
                 current_node = current_node.next;
             }
@@ -37,61 +41,140 @@ public class LL {
         }
     }
 
-    public void printLL() {
+
+    public void printLL () {
         if (head == null) {
-            System.out.println("No item in the list");
+            System.out.println("No item to list.");
         } else {
-            Node curr_node = head;
-            while (curr_node != null) {
-                System.out.println(curr_node.data + " ");
-                curr_node = curr_node.next;
+
+            Node current_node = head;
+
+            while (current_node != null) {
+                System.out.println(current_node.data + " ");
+                current_node = current_node.next;
             }
         }
     }
 
 
-    public void insertionSort() {
-        if (head == null || head.next == null) {
-            return;
+    public int count_node () {
+        int count = 0 ;
+
+        if (head == null) {
+            return count;
+        } else {
+            Node current_node = head;
+
+            while (current_node != null) {
+                count = count + 1;
+                current_node = current_node.next;
+            }
+        }
+        return count;
+    }
+
+    public Node search(int item) {
+        if (head == null) {
+            return  null;
+        } else {
+            Node current_node = head;
+
+            while (current_node != null) {
+                if (current_node.data == item) {
+                    return current_node;
+                }
+                current_node = current_node.next;
+            }
+        }
+        return null;
+    }
+
+    public boolean isEmpty() {
+       return count_node() == 0 ;
+    }
+
+    public void insertAtPosition(int position, int item) {
+        if (position == 0) {
+            prepend(item);
+        } else if (position == count_node()) {
+            append(item);
+        } else if (position > 0 && position < count_node()) {
+
+            Node node = new Node(item);
+            Node current_node = head;
+            for (int i = 0; i < position - 1 ; i++) {
+                current_node = current_node.next;
+            }
+            node.next = current_node.next;
+            current_node.next = node;
+        } else {
+            System.out.println("invalid position.");
         }
 
-        Node sorted = null;
-        Node current = head;
+    }
 
-        while (current != null) {
-            Node next = current.next;
 
-            if (sorted == null || sorted.data >= current.data) {
+    public void removefirst() {
+        if (head == null) {
+            System.out.println("No item to remove.");
+        } else {
+            head = head.next;
+        }
+    }
 
-                current.next = sorted;
-                sorted = current;
-            } else {
+    public void removeLast() {
+        if (isEmpty()) {
+            System.out.println("No item to remove.");
+        } else if (count_node() == 1) {
+            head = null ;
+        } else {
 
-                Node temp = sorted;
-                while (temp.next != null && current.data > temp.next.data) {
-                    temp = temp.next;
-                }
+            Node current_node = head;
+            for (int i = 0; i < count_node() - 2 ; i++ ) {
+                current_node  = current_node.next;
+            }
+            current_node.next = null ;
+        }
+    }
 
-                current.next = temp.next;
-                temp.next = current;
+    public void removeAtPosition (int position) {
+        if (position == 0) {
+            removefirst();
+        } else if (position == count_node()) {
+            removeLast();
+        } else if (position > 0 && position < count_node()) {
+            Node current_node = head;
+
+            for (int i = 0 ; i < position - 1; i++) {
+                current_node = current_node.next ;
             }
 
-            current = next;
-
+            current_node.next = current_node.next.next;
+        } else {
+            System.out.println("invalid position.");
         }
 
-
-        head = sorted;
     }
     public static void main(String[] args) {
         LL ll = new LL();
-        ll.append(3);
-        ll.append(1);
-        ll.append(4);
-        ll.append(2);
-        ll.append(5);
-        ll.insertionSort();
+        ll.append(10);
+        ll.append(20);
+        ll.append(30);
+        ll.prepend(0);
+        ll.prepend(-10);
         ll.printLL();
+        int cnt = ll.count_node();
+        System.out.println(cnt);
 
+        Node node = ll.search(12);
+        if (node == null) {
+            System.out.println("Note found.");
+        } else {
+            System.out.println(node.data + " is found in the list.");
+        }
+
+        System.out.println();
+        ll.removeAtPosition(2);
+        ll.printLL();
     }
 }
